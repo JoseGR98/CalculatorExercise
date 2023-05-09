@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.calculatorexercise.R
-import com.example.calculatorexercise.data.OperationType
 import com.example.calculatorexercise.databinding.FragmentResultBinding
+import com.example.calculatorexercise.ui.viewmodel.ResultViewModel
 
 /**
  * File for [ResultFragment]
@@ -19,6 +19,7 @@ import com.example.calculatorexercise.databinding.FragmentResultBinding
  */
 class ResultFragment : Fragment() {
     private lateinit var binding: FragmentResultBinding
+    private lateinit var resultViewModel: ResultViewModel
     private val args by navArgs<ResultFragmentArgs>()
 
     override fun onCreateView(
@@ -26,6 +27,7 @@ class ResultFragment : Fragment() {
         container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentResultBinding.inflate(layoutInflater, container, false)
+        resultViewModel = ResultViewModel()
         return binding.root
     }
 
@@ -36,20 +38,7 @@ class ResultFragment : Fragment() {
         val type = args.operationObject.operationType
         val b = args.operationObject.secondNumber
 
-        val total: Float = when (type) {
-            OperationType.ADDITION -> {
-                a + b
-            }
-            OperationType.SUBTRACTION -> {
-                a - b
-            }
-            OperationType.MULTIPLICATON -> {
-                a * b
-            }
-            OperationType.DIVISION -> {
-                a / b
-            }
-        }
+        val total = resultViewModel.arithmeticOperation(a, b, type)
         binding.resultNumberTextView.text = total.toString()
 
         binding.restartButton.setOnClickListener {

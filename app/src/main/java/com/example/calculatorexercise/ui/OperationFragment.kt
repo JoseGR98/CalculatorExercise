@@ -40,7 +40,7 @@ class OperationFragment : Fragment() {
             navigateToSecondNumberFragment(OperationType.SUBTRACTION)
         }
         binding.multiplicationButton.setOnClickListener {
-            navigateToSecondNumberFragment(OperationType.MULTIPLICATON)
+            navigateToSecondNumberFragment(OperationType.MULTIPLICATION)
         }
         binding.divisionButton.setOnClickListener {
             navigateToSecondNumberFragment(OperationType.DIVISION)
