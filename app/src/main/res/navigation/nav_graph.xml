@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/firstNumberFragment">
+
+    <fragment
+        android:id="@+id/firstNumberFragment"
+        android:name="com.example.calculatorexercise.ui.FirstNumberFragment"
+        android:label="fragment_first_number"
+        tools:layout="@layout/fragment_first_number" >
+        <action
+            android:id="@+id/action_firstNumberFragment_to_operationFragment"
+            app:destination="@id/operationFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/operationFragment"
+        android:name="com.example.calculatorexercise.ui.OperationFragment"
+        android:label="fragment_operation"
+        tools:layout="@layout/fragment_operation" >
+        <action
+            android:id="@+id/action_operationFragment_to_secondNumberFragment"
+            app:destination="@id/secondNumberFragment" />
+        <argument
+            android:name="operationObject"
+            app:argType="com.example.calculatorexercise.data.Operation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondNumberFragment"
+        android:name="com.example.calculatorexercise.ui.SecondNumberFragment"
+        android:label="fragment_second_number"
+        tools:layout="@layout/fragment_second_number" >
+        <action
+            android:id="@+id/action_secondNumberFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <argument
+            android:name="operationObject"
+            app:argType="com.example.calculatorexercise.data.Operation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.calculatorexercise.ui.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_firstNumberFragment"
+            app:destination="@id/firstNumberFragment" />
+        <argument
+            android:name="operationObject"
+            app:argType="com.example.calculatorexercise.data.Operation" />
+    </fragment>
+
+</navigation>
