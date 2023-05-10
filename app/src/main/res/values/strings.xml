@@ -3,6 +3,7 @@
     <string name="title">Calculator Big chungus</string>
     <string name="label_first_number">Type your first number</string>
     <string name="hint_number_label">XXX</string>
+    <string name="hint_number_zero_label">000</string>
     <string name="label_button">Next</string>
     <string name="first_number">First Number</string>
     <string name="operation">Operation</string>

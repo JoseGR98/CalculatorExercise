@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.ResultFragment">
 
-    <Button
-        android:id="@+id/restartButton"
-        android:layout_width="125dp"
-        android:layout_height="48dp"
-        android:text="@string/repeat_button_label"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultNumberTextView"
-        app:layout_constraintVertical_bias="0.193" />
-
     <TextView
         android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
@@ -25,6 +13,7 @@
         android:text="@string/total_label"
         android:textColor="#EF6C00"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -44,5 +33,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultTextView"
         app:layout_constraintVertical_bias="0.145" />
+
+    <Button
+        android:id="@+id/restartButton"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/repeat_button_label"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultNumberTextView"
+        app:layout_constraintVertical_bias="0.193" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

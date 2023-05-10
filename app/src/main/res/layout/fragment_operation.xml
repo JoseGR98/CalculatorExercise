@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,8 +8,6 @@
     android:background="@color/white"
     android:backgroundTint="@color/white"
     tools:context=".ui.OperationFragment">
-
-    <!-- TODO: Update blank fragment layout -->
 
     <TextView
         android:id="@+id/firstNumberTextView"
@@ -28,7 +27,7 @@
         android:id="@+id/fistNumberValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/default_value_number_label"
+        android:text="@string/hint_number_label"
         android:textColor="#EF6C00"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,8 +42,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/operation_type_label"
+        android:textAlignment="center"
         android:textColor="#EF6C00"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -56,10 +57,11 @@
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="@string/add_button"
         android:textSize="34sp"
+        app:layout_constraintEnd_toStartOf="@+id/minusButton"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/operationTextView" />
 
@@ -67,10 +69,11 @@
         android:id="@+id/minusButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="@string/minus_button"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/addButton"
         app:layout_constraintTop_toBottomOf="@+id/operationTextView" />
 
@@ -78,11 +81,11 @@
         android:id="@+id/multiplicationButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="20dp"
         android:text="@string/multiply_button"
         android:textSize="34sp"
-        app:layout_constraintEnd_toStartOf="@+id/minusButton"
+        app:layout_constraintEnd_toStartOf="@+id/divisionButton"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addButton" />
 
@@ -94,6 +97,7 @@
         android:text="@string/division_button"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/multiplicationButton"
         app:layout_constraintTop_toBottomOf="@+id/minusButton" />
 
