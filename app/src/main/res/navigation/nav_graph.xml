@@ -22,9 +22,6 @@
         <action
             android:id="@+id/action_operationFragment_to_secondNumberFragment"
             app:destination="@id/secondNumberFragment" />
-        <argument
-            android:name="operationObject"
-            app:argType="com.example.calculatorexercise.data.Operation" />
     </fragment>
 
     <fragment
@@ -35,9 +32,6 @@
         <action
             android:id="@+id/action_secondNumberFragment_to_resultFragment"
             app:destination="@id/resultFragment" />
-        <argument
-            android:name="operationObject"
-            app:argType="com.example.calculatorexercise.data.Operation" />
     </fragment>
 
     <fragment
@@ -48,9 +42,6 @@
         <action
             android:id="@+id/action_resultFragment_to_firstNumberFragment"
             app:destination="@id/firstNumberFragment" />
-        <argument
-            android:name="operationObject"
-            app:argType="com.example.calculatorexercise.data.Operation" />
     </fragment>
 
 </navigation>

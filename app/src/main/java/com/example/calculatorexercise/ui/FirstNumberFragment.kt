@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.calculatorexercise.databinding.FragmentFirstNumberBinding
 import com.example.calculatorexercise.ui.viewmodel.SharedViewModel
 
@@ -18,7 +20,7 @@ import com.example.calculatorexercise.ui.viewmodel.SharedViewModel
  */
 class FirstNumberFragment : Fragment() {
     private lateinit var binding: FragmentFirstNumberBinding
-    private lateinit var sharedViewModel: SharedViewModel
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,34 +28,25 @@ class FirstNumberFragment : Fragment() {
     ): View {
 
         binding = FragmentFirstNumberBinding.inflate(layoutInflater, container, false)
-        binding.editTextNumber1.addTextChangedListener(
-            object : TextWatcher {
-                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    //sharedViewModel.saveFirstNumber( s.toString().toFloat() )
-                }
-                override fun afterTextChanged(s: Editable?) {}
+        binding.editTextNumber1.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                sharedViewModel.saveFirstNumber(s.toString())
             }
-        )
-        sharedViewModel = SharedViewModel()
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //val number = binding.editTextNumber1.text.toString().toFloat()
 
-        setObservers()
-        /*binding.operationButton.setOnClickListener {
-            val directions = FirstNumberFragmentDirections.actionFirstNumberFragmentToOperationFragment(operation)
+        binding.operationButton.setOnClickListener {
+            val directions = FirstNumberFragmentDirections.actionFirstNumberFragmentToOperationFragment()
             findNavController().navigate(directions)
-        }*/
-    }
-
-    private fun setObservers() {
-        sharedViewModel.operation.observe(viewLifecycleOwner){ operation ->
-            binding.editTextNumber1.setText(operation.firstNumber.toString())
         }
     }
 
