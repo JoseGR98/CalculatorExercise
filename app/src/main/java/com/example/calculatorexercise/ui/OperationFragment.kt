@@ -42,19 +42,15 @@ class OperationFragment : Fragment() {
             }
             return root
         }
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.fistNumberValue.text = sharedViewModel.operation.value?.firstNumber.toString()
-
+        binding.fistNumberValue.text = sharedViewModel.getFirstNumber().toString()
     }
 
     private fun navigateToSecondNumberFragment(type: OperationType) {
-        sharedViewModel.saveOperator(type)
+        sharedViewModel.setOperator(type)
         val directions = OperationFragmentDirections.actionOperationFragmentToSecondNumberFragment()
         findNavController().navigate(directions)
     }

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.calculatorexercise.R
 import com.example.calculatorexercise.databinding.FragmentResultBinding
 import com.example.calculatorexercise.ui.viewmodel.SharedViewModel
 
@@ -31,12 +30,13 @@ class ResultFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        with(binding) {
+            resultNumberTextView.text = sharedViewModel.getTotal().toString()
 
-        binding.resultNumberTextView.text = sharedViewModel.getTotal().toString()
-
-        binding.restartButton.setOnClickListener {
-            findNavController().navigate(R.id.action_resultFragment_to_firstNumberFragment)
+            restartButton.setOnClickListener {
+                val directions = ResultFragmentDirections.actionResultFragmentToFirstNumberFragment()
+                findNavController().navigate(directions)
+            }
         }
     }
-
 }

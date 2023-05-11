@@ -12,14 +12,28 @@ class SharedViewModel: ViewModel() {
     val operation : LiveData<Operation>
         get() = _operation
 
-    fun saveFirstNumber(number: String) {
-        _operation.value = _operation.value?.copy(firstNumber = number.toFloat())
+    fun setFirstNumber(number: Float) {
+        if (!number.isNaN()) {
+            _operation.value = _operation.value?.copy(firstNumber = number)
+        }
     }
-    fun saveOperator(operator: OperationType) {
+    fun setOperator(operator: OperationType) {
         _operation.value = _operation.value?.copy(operationType = operator)
     }
-    fun saveSecondNumber(number: String) {
-        _operation.value = _operation.value?.copy(secondNumber = number.toFloat())
+    fun setSecondNumber(number: Float) {
+        if (!number.isNaN()) {
+            _operation.value = _operation.value?.copy(secondNumber = number)
+        }
+    }
+
+    fun getFirstNumber(): Float? {
+        return _operation.value?.firstNumber
+    }
+    fun getOperator():String {
+        return _operation.value?.operationType.toString()
+    }
+    fun getSecondNumber(): Float? {
+        return _operation.value?.secondNumber
     }
 
     fun getTotal() : Float? {
@@ -31,5 +45,4 @@ class SharedViewModel: ViewModel() {
             OperationType.DIVISION -> operation.firstNumber / operation.secondNumber
         }
     }
-
 }

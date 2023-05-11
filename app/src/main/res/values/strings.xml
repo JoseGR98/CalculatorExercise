@@ -1,23 +1,26 @@
 <resources>
     <string name="app_name">CalculatorExercise</string>
-    <string name="title">Calculator Big chungus</string>
-    <string name="label_first_number">Type your first number</string>
-    <string name="hint_number_label">XXX</string>
-    <string name="hint_number_zero_label">000</string>
-    <string name="label_button">Next</string>
-    <string name="first_number">First Number</string>
-    <string name="operation">Operation</string>
-    <string name="second_number">Type your second number</string>
-    <string name="hint_number">XXX</string>
-    <string name="result_label">Result</string>
-    <string name="repeat_button_label">Another</string>
-    <string name="total_label">Total</string>
-    <string name="division_button">/</string>
-    <string name="multiply_button">*</string>
-    <string name="minus_button">-</string>
-    <string name="add_button">+</string>
+
+    <string name="title_label">Calculator Big chungus</string>
+
+    <string name="first_number_label">Type your first number</string>
+    <string name="second_number_label">Type your second number</string>
     <string name="operation_type_label">Choose your operation type</string>
     <string name="default_value_number_label">0</string>
-    <string name="number_label">Number:</string>
+    <string name="result_label">Result</string>
+    <string name="hint_text_label">XXX</string>
+    <string name="hint_number_label">000</string>
+    <string name="number1_label">First Number</string>
+    <string name="number2_label">Second Number</string>
+    <string name="operation_label">Operation</string>
+    <string name="total_label">Total</string>
+
+    <string name="next_button">Next</string>
+    <string name="add_button">+</string>
+    <string name="minus_button">-</string>
+    <string name="multiply_button">*</string>
+    <string name="division_button">/</string>
+    <string name="restart_button">Restart</string>
+
     <string name="image_first">image</string>
 </resources>

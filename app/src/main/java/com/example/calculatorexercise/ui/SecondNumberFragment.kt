@@ -23,7 +23,6 @@ class SecondNumberFragment : Fragment() {
     private lateinit var binding: FragmentSecondNumberBinding
     private val sharedViewModel: SharedViewModel by activityViewModels()
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?, savedInstanceState: Bundle?
@@ -31,35 +30,29 @@ class SecondNumberFragment : Fragment() {
         binding = FragmentSecondNumberBinding.inflate(layoutInflater, container, false)
 
         binding.editTextNumber2.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                sharedViewModel.saveSecondNumber(s.toString())
-            }
-
+            override fun beforeTextChanged(number: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun afterTextChanged(s: Editable?) {}
+            override fun onTextChanged(number: CharSequence?, start: Int, before: Int, count: Int) {
+                sharedViewModel.setSecondNumber(number.toString().toFloat())
+            }
         })
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        with(binding) {
+            firstNumberVal.text = sharedViewModel.getFirstNumber().toString()
+            operationVal.text = sharedViewModel.getOperator()
 
-        binding.firstNumberVal.text = sharedViewModel.operation.value?.firstNumber.toString()
-        binding.operationVal.text = sharedViewModel.operation.value?.operationType.toString()
-
-        binding.resultButton.setOnClickListener {
-
-            val number2 = binding.editTextNumber2.text.toString().toFloatOrNull()
-
-            if (number2 != null) {
-                val directions =
-                    SecondNumberFragmentDirections.actionSecondNumberFragmentToResultFragment()
-                findNavController().navigate(directions)
-            }
-            else {
-                Toast.makeText(context, "Enter a valid number", Toast.LENGTH_SHORT).show()
+            resultButton.setOnClickListener {
+                if (editTextNumber2.text.isNotEmpty()) {
+                    val directions = SecondNumberFragmentDirections.actionSecondNumberFragmentToResultFragment()
+                    findNavController().navigate(directions)
+                }
+                else {
+                    Toast.makeText(context,"Add a valid value",Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
