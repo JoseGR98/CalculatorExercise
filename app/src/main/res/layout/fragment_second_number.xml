@@ -22,7 +22,7 @@
 
     <TextView
         android:id="@+id/firstNumberVal"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:width="120dp"
@@ -52,7 +52,7 @@
 
     <TextView
         android:id="@+id/operationVal"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:width="120dp"

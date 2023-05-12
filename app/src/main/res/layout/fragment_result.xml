@@ -7,6 +7,78 @@
     tools:context=".ui.ResultFragment">
 
     <TextView
+        android:id="@+id/number1Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="@string/hint_number_label"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/number1Label"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/number1Label"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="@string/number1_label"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/number1Value"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/operatorLabel"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/operation_label"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/operatorValue"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number1Label" />
+
+    <TextView
+        android:id="@+id/operatorValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/hint_text_label"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/operatorLabel"
+        app:layout_constraintTop_toBottomOf="@+id/number1Value" />
+
+    <TextView
+        android:id="@+id/number2Label"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/number2_label"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/number2Value"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/operatorLabel" />
+
+    <TextView
+        android:id="@+id/number2Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/hint_number_label"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/number2Label"
+        app:layout_constraintTop_toBottomOf="@+id/operatorValue" />
+
+    <TextView
         android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

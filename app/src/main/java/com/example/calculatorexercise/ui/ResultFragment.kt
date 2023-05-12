@@ -31,9 +31,14 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
+            number1Value.text = sharedViewModel.getFirstNumber().toString()
+            operatorValue.text = sharedViewModel.getOperator()
+            number2Value.text = sharedViewModel.getSecondNumber().toString()
+
             resultNumberTextView.text = sharedViewModel.getTotal().toString()
 
             restartButton.setOnClickListener {
+                sharedViewModel.clearModel()
                 val directions = ResultFragmentDirections.actionResultFragmentToFirstNumberFragment()
                 findNavController().navigate(directions)
             }

@@ -8,7 +8,6 @@ import com.example.calculatorexercise.data.OperationType
 
 class SharedViewModel: ViewModel() {
     private val _operation = MutableLiveData(Operation(0.0F,OperationType.ADDITION,0.0F))
-
     val operation : LiveData<Operation>
         get() = _operation
 
@@ -45,4 +44,9 @@ class SharedViewModel: ViewModel() {
             OperationType.DIVISION -> operation.firstNumber / operation.secondNumber
         }
     }
+
+    fun clearModel() {
+        _operation.value = Operation()
+    }
+
 }
